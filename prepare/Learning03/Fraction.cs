@@ -26,7 +26,7 @@ public class Fraction
         return _top;
     }
 
-    public void SerTop(int top)
+    public void SetTop(int top)
     {
         _top = top;
     }
