@@ -17,11 +17,12 @@ class Scripture
     }
 
     //Behaviors 
-    public void HideWords()
+    public int HideWords(int totalHidden)
     {
         Random random = new Random();
-        int wordsToHide = random.Next(1, 4);
-        int wordsHidden = 0;
+        int wordsHidden = 0; 
+        int diff = _wordsList.Count - totalHidden;
+        int wordsToHide = random.Next(1, Math.Min(4, diff));
 
         while (wordsHidden < wordsToHide)
         {
@@ -33,9 +34,10 @@ class Scripture
                 wordsHidden++;
             }
         }
-
+        int count = + wordsHidden;
         Console.Clear();
         GetRenderedText();
+        return count;
     
     }
 

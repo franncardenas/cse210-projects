@@ -13,7 +13,7 @@ class Program
         Console.WriteLine();
 
         bool allWordsHidden = false;
-
+        int totalHidden = 0;
         do
         {
             Console.WriteLine("\nPress Enter to continue or type 'quit' to finish: ");
@@ -27,8 +27,11 @@ class Program
             }
             else if (userInput == "")
             {
-                scripture.HideWords();
+                
+                int result = scripture.HideWords(totalHidden);
+                totalHidden = totalHidden + result;
                 allWordsHidden = scripture.IsCompletelyHidden();
+
             }
             else
             {
