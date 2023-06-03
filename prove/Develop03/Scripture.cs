@@ -20,7 +20,7 @@ class Scripture
     public void HideWords()
     {
         Random random = new Random();
-        int wordsToHide = random.Next(2, 4);
+        int wordsToHide = random.Next(1, 4);
         int wordsHidden = 0;
 
         while (wordsHidden < wordsToHide)
