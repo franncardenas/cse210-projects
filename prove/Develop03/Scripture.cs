@@ -1,10 +1,10 @@
 class Scripture
 {
-    private string _reference;
+    private Reference _reference;
     private List<Word> _wordsList = new List<Word>();
     
     //Constructor
-    public Scripture(string reference, string texScripture)
+    public Scripture(Reference reference, string texScripture)
     {
         string[] wordsScripture = texScripture.Split(' ');
 
@@ -43,7 +43,7 @@ class Scripture
 
     public void GetRenderedText()
     {
-        Console.Write($"{_reference} " );
+        Console.Write($"{_reference.GetReference()} " );
         foreach (Word word in _wordsList)
         {
             Console.Write(word.GetWord() + " ");
