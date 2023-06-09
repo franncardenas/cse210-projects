@@ -8,24 +8,24 @@ public class Journal
     public void Display()
     {
 
-    foreach (Entry entry in _entries)
-    {
-        //using behavior from Entry
-        entry.DisplayEntry();
-    }
+        foreach (Entry entry in _entries)
+        {
+            //using behavior from Entry
+            entry.DisplayEntry();
+        }
     }
     public void SaveToFile()
     {
-    using (StreamWriter writer = new StreamWriter(_fileName))
-    {
-        // writer.WriteLine("Date, Prompt, journal");
-
-        // Escribir cada objeto Entry como una fila en el archivo CSV
-        foreach (Entry entry in _entries)
+        using (StreamWriter writer = new StreamWriter(_fileName))
         {
-            writer.WriteLine($"{entry._date};{entry._promptEntry};{entry._userEntry}");
+            // writer.WriteLine("Date, Prompt, journal");
+
+            // Escribir cada objeto Entry como una fila en el archivo CSV
+            foreach (Entry entry in _entries)
+            {
+                writer.WriteLine($"{entry._date};{entry._promptEntry};{entry._userEntry}");
+            }
         }
-    }
     }
     public List<Entry> ReadFile()
     {
